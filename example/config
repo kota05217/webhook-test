@@ -1,0 +1,25 @@
+{
+    "avatar_url": "$config.avatar-url",
+    "username": "$config.webhook-username",
+    "embeds": [
+        {
+            ${if config.username}
+            "author": {
+                "name": "$config.username",
+                "url": "$config.author-url",
+                "icon_url": "$config.author-avatar-url"
+            },${endif}
+            ${if config.field-value}
+            "fields": [{
+                "name": "$config.field-name",
+                "value": "$config.field-value",
+                "inline": true
+            }],${endif}
+            "title": "$config.title",
+            "description": "$config.description",
+            "url": "$config.url",
+            "type": "rich",
+            "color": "$config.color-code"
+        }
+    ]
+}
